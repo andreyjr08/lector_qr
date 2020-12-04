@@ -18,12 +18,12 @@ class CustomNavigationBar extends StatelessWidget {
       elevation: 0,
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon( Icons.map ),
-          label: 'Mapa'
+          icon: Icon( Icons.web_sharp),
+          label: 'Web'
         ),
         BottomNavigationBarItem(
-          icon: Icon( Icons.compass_calibration ),
-          label: 'Direcciones'
+          icon: Icon( Icons.history_sharp ),
+          label: 'Historial'
         ),
       ],
     );
