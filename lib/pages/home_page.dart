@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:qr_reader/pages/direcciones_page.dart';
 import 'package:qr_reader/pages/mapas_page.dart';
 
-import 'package:qr_reader/providers/db_provider.dart';
 import 'package:qr_reader/providers/scan_list_provider.dart';
 import 'package:qr_reader/providers/ui_provider.dart';
 
@@ -56,6 +55,8 @@ class _HomePageBody extends StatelessWidget {
     // Usar el ScanListProvider
     final scanListProvider = Provider.of<ScanListProvider>(context, listen: false);
 
+
+
     switch( currentIndex ) {
 
       case 0:
@@ -67,7 +68,7 @@ class _HomePageBody extends StatelessWidget {
         return DireccionesPage();
 
       default:
-        return MapasPage();
+        return DireccionesPage();
     }
 
 
