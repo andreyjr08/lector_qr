@@ -56,15 +56,10 @@ class _HomePageBody extends StatelessWidget {
     final scanListProvider = Provider.of<ScanListProvider>(context, listen: false);
 
 
-
     switch( currentIndex ) {
 
-      case 0:
-        scanListProvider.cargarScanPorTipo('geo');
-        return MapasPage();
-
       case 1: 
-        scanListProvider.cargarScanPorTipo('http');
+        scanListProvider.cargarScans();
         return DireccionesPage();
 
       default:

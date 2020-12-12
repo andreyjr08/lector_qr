@@ -17,7 +17,6 @@ class MapaPage extends StatefulWidget {
 
 class _MapaPageState extends State<MapaPage> {
 
-  Completer<GoogleMapController> _controller = Completer();
   MapType mapType = MapType.normal;
 
   @override
@@ -29,7 +28,7 @@ print(scan);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mapa'),
+        title: Text('WEB'),
       ),
       body: WebView(
    initialUrl: scan,
