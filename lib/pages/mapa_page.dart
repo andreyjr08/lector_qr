@@ -24,8 +24,6 @@ class _MapaPageState extends State<MapaPage> {
 
     final scan = ModalRoute.of(context).settings.arguments;
 
-print(scan);
-
     return Scaffold(
       appBar: AppBar(
         title: Text('WEB'),
