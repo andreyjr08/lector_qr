@@ -7,8 +7,8 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="qr_reader"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Qr Reader"
+        android:icon="@mipmap/launcher_icon">
 
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyBa33FsFzKYRymQjO9OkGOYe8E8d0ROIOQ"/>
