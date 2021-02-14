@@ -10,8 +10,6 @@ launchURL(BuildContext context, ScanModel scan) async {
 
   final separado = prueba.split('/');
 
-  print(">>>>>" + separado[0]);
-
   final separadoPunto = separado[0].split('.');
 
 
