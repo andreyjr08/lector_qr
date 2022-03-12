@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:qr_reader/providers/db_provider.dart';
+import 'package:lector_qr/providers/db_provider.dart';
 
 class ScanListProvider extends ChangeNotifier {
-
   List<ScanModel> scans = [];
   String tipoSeleccionado = 'http';
 
-  Future<ScanModel> nuevoScan( String valor ) async {
-
-    final nuevoScan = new ScanModel(valor: valor);
+  Future<ScanModel> nuevoScan(String valor) async {
+    final nuevoScan = new ScanModel(valor: valor, id: 0);
     final id = await DBProvider.db.nuevoScan(nuevoScan);
     // Asignar el ID de la base de datos al modelo
     nuevoScan.id = id;
 
-    if ( this.tipoSeleccionado == nuevoScan.tipo ) {
+    if (this.tipoSeleccionado == nuevoScan.tipo) {
       this.scans.add(nuevoScan);
       notifyListeners();
     }
@@ -27,7 +25,7 @@ class ScanListProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  cargarScanPorTipo( String tipo ) async {
+  cargarScanPorTipo(String tipo) async {
     final scans = await DBProvider.db.getScansPorTipo(tipo);
     this.scans = [...scans];
     this.tipoSeleccionado = tipo;
@@ -40,11 +38,7 @@ class ScanListProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  borrarScanPorId( int id ) async {
+  borrarScanPorId(int id) async {
     await DBProvider.db.deleteScan(id);
   }
-
-
-
 }
-

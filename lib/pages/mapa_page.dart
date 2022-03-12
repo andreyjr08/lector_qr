@@ -4,6 +4,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class MapaPage extends StatefulWidget {
+  const MapaPage({Key? key}) : super(key: key);
+
   @override
   _MapaPageState createState() => _MapaPageState();
 }
@@ -13,14 +15,14 @@ class _MapaPageState extends State<MapaPage> {
 
   @override
   Widget build(BuildContext context) {
-    final scan = ModalRoute.of(context).settings.arguments;
+    final scan = ModalRoute.of(context)!.settings.arguments;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('WEB'),
+        title: const Text('WEB'),
       ),
       body: WebView(
-        initialUrl: scan,
+        initialUrl: scan.toString(),
       ),
     );
   }
