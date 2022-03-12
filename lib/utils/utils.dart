@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:lector_qr/providers/db_provider.dart';
 
@@ -16,7 +18,7 @@ launchURL(BuildContext context, ScanModel scan) async {
     var whatsappUrl = "whatsapp://send?text=$prueba";
     await canLaunch(whatsappUrl)
         ? launch(whatsappUrl)
-        : print(
+        : log(
             "open whatsapp app link or do a snackbar with notification that there is no whatsapp installed");
   } else if (separado[1] == 'maps' ||
       separadoPunto[0] == 'youtu' ||

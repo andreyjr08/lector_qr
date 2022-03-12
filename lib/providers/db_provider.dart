@@ -13,7 +13,7 @@ class DBProvider {
   DBProvider._();
 
   Future<Database> get database async {
-    if (_database != null) return _database;
+    if (_database.toString().isNotEmpty) return _database;
 
     _database = await initDB();
 
@@ -24,7 +24,6 @@ class DBProvider {
     // Path de donde almacenaremos la base de datos
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
     final path = join(documentsDirectory.path, 'ScansDB.db');
-    print(path);
 
     // Crear base de datos
     return await openDatabase(path, version: 1, onOpen: (db) {},

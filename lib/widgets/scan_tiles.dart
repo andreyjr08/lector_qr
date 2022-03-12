@@ -6,7 +6,7 @@ import 'package:lector_qr/utils/utils.dart';
 class ScanTiles extends StatelessWidget {
   final String tipo;
 
-  const ScanTiles({required this.tipo});
+  const ScanTiles({Key? key, required this.tipo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class ScanTiles extends StatelessWidget {
                     color: Theme.of(context).primaryColor),
                 title: Text(scans[i].valor),
                 subtitle: Text(scans[i].id.toString()),
-                trailing: Icon(Icons.keyboard_arrow_right, color: Colors.grey),
+                trailing: const Icon(Icons.keyboard_arrow_right, color: Colors.grey),
                 onTap: () => launchURL(context, scans[i]),
               ),
             ));

@@ -10,15 +10,17 @@ import 'package:lector_qr/widgets/custom_navigatorbar.dart';
 import 'package:lector_qr/widgets/scan_button.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: Text('Historial'),
+        title: const Text('Historial'),
         actions: [
           IconButton(
-              icon: Icon(Icons.delete_forever),
+              icon: const Icon(Icons.delete_forever),
               onPressed: () {
                 Provider.of<ScanListProvider>(context, listen: false)
                     .borrarTodos();
@@ -26,8 +28,8 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: _HomePageBody(),
-      bottomNavigationBar: CustomNavigationBar(),
-      floatingActionButton: ScanButton(),
+      bottomNavigationBar: const CustomNavigationBar(),
+      floatingActionButton: const ScanButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
@@ -49,10 +51,10 @@ class _HomePageBody extends StatelessWidget {
     switch (currentIndex) {
       case 1:
         scanListProvider.cargarScans();
-        return DireccionesPage();
+        return const DireccionesPage();
 
       default:
-        return DireccionesPage();
+        return const DireccionesPage();
     }
   }
 }

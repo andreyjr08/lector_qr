@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:meta/meta.dart';
 
 ScanModel scanModelFromJson(String str) => ScanModel.fromJson(json.decode(str));
 String scanModelToJson(ScanModel data) => json.encode(data.toJson());
@@ -10,8 +9,8 @@ class ScanModel {
     this.tipo,
     required this.valor,
   }) {
-    if (this.valor.contains('http')) {
-      this.tipo = 'http';
+    if (valor.contains('http')) {
+      tipo = 'http';
     }
   }
 
