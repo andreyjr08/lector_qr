@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lector_qr/pages/validar_version.dart';
 import 'package:provider/provider.dart';
 
 import 'package:lector_qr/pages/direcciones_page.dart';
@@ -24,6 +25,11 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Provider.of<ScanListProvider>(context, listen: false)
                     .borrarTodos();
+              }),
+          IconButton(
+              icon: const Icon(Icons.update),
+              onPressed: () {
+                ValidarVersion;
               })
         ],
       ),

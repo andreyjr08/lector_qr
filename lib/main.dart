@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lector_qr/pages/validar_version.dart';
 import 'package:provider/provider.dart';
 
 import 'package:lector_qr/pages/home_page.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         routes: {
           'home': (_) => const HomePage(),
           'mapa': (_) => const MapaPage(),
+          'version': (_) => const ValidarVersion(),
         },
         theme: ThemeData(
             primaryColor: Colors.teal[800],
