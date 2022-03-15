@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'QR Reader',
-        initialRoute: 'home',
+        initialRoute: 'version',
         routes: {
           'home': (_) => const HomePage(),
           'mapa': (_) => const MapaPage(),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lector_qr/pages/validar_version.dart';
 import 'package:provider/provider.dart';
 
 import 'package:lector_qr/pages/direcciones_page.dart';
@@ -9,12 +8,16 @@ import 'package:lector_qr/providers/ui_provider.dart';
 
 import 'package:lector_qr/widgets/custom_navigatorbar.dart';
 import 'package:lector_qr/widgets/scan_button.dart';
+import 'package:upgrader/upgrader.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    const appcastURL =
+        'https://raw.githubusercontent.com/larryaasen/upgrader/master/test/testappcast.xml';
+    final cfg = AppcastConfiguration(url: appcastURL, supportedOS: ['android']);
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -29,7 +32,10 @@ class HomePage extends StatelessWidget {
           IconButton(
               icon: const Icon(Icons.update),
               onPressed: () {
-                ValidarVersion;
+                UpgradeAlert(
+                  appcastConfig: cfg,
+                  child: const Center(child: Text('Checking...')),
+                );
               })
         ],
       ),
