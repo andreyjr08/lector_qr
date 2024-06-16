@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
               icon: const Icon(Icons.update),
               onPressed: () {
                 UpgradeAlert(
-                  appcastConfig: cfg,
+                  //appcastConfig: cfg,
                   child: const Center(child: Text('Checking...')),
                 );
               })
